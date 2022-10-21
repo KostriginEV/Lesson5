@@ -25,7 +25,7 @@ namespace Locking
                 throw new Exception("Stock cannot be negative!");
             }
 
-            lock (coffeeLock)
+            //lock (coffeeLock) <- Stock can not be negative! lock() method is required!
             {
                 // Check that there is sufficient stock to fulfil the order.
                 if (stock >= coffeesRequired)
